@@ -1,0 +1,115 @@
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    box-sizing: border-box;
+    font-size: 14px;
+ }
+
+ *,
+ *::before,
+ *::after {
+   box-sizing: inherit;
+   margin: 0;
+   padding: 0;
+ }
+  
+  body {
+    background-color: var(--cream);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+  }
+  
+  .card {
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0 0 1.5rem var(--grayish-blue);
+    overflow: hidden;
+    width: 600px;
+    height: 450px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card__img {
+    background-image: url('images/image-product-desktop300x450.jpg');
+  }
+
+  .card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;   
+    padding: 2.5rem;      
+  }
+
+  .card__text h1 {
+    color: var(--very-dark-blue);
+    line-height: 1em;
+    font-family: 'Fraunces', serif;
+  }
+
+  .card__text h5 {
+    color: var(--dark-grayish-blue);
+    letter-spacing: .3rem;
+  }
+  
+  .card__text p {
+    color: var(--dark-grayish-blue);
+    line-height: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .price {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+
+  #new_price {
+    margin-right: 25px;   
+    color: var(--dark-cyan);
+  }
+
+  #old_price {
+    text-decoration: line-through;
+    position: relative;
+    top: .3em;
+  }
+
+  button {
+    width: 235px;
+    height: 45px;
+    background: var(--dark-cyan);
+    color: var(--white);
+    border: none;
+    border-radius: .5em;
+    margin-top: .5rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  button:hover {
+    background-color: #FF00FF;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 375px) {
+    .card {
+        width: 360px;
+        height: 620px;
+        display: flex;
+        flex-direction: column;
+    }
+    .card__img {   
+        min-height: 240px;
+        background-image: url('images/image-product-mobile343x240.jpg');
+    }
+    button {
+        width: 100%;
+    }
+    .card__text {
+        padding: 1.8rem;
+    }
+  }
